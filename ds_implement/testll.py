@@ -7,6 +7,7 @@ def test_empty_list_ops():
     ll.remove(1)  # should not raise
     ll.print_list()  # smoke test
 
+
 def test_insert_on_empty_and_bounds():
     ll = LinkedList()
     ll.insert(0, 10)
@@ -15,6 +16,7 @@ def test_insert_on_empty_and_bounds():
         ll.insert(2, 99)
     with pytest.raises(IndexError):
         ll.insert(-1, 99)
+
 
 def test_append_and_prepend_and_order():
     ll = LinkedList()
@@ -47,7 +49,8 @@ def test_remove_head_tail_and_duplicates():
     out = []
     cur = ll.head
     while cur:
-        out.append(cur.value); cur = cur.next
+        out.append(cur.value)
+        cur = cur.next
     assert out == [5, 10, 20]
     ll.remove(5)      # remove head
     ll.remove(20)     # remove tail
